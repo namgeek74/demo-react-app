@@ -1,7 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+// import {withRouter} from 'react-router-dom';
 
-export default class SignIn extends React.Component {
+import { withRouter, Link } from 'react-router-dom';
+
+class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +23,7 @@ export default class SignIn extends React.Component {
   };
 
   signIn = () => {
+    // const history = useHistory();
     console.log(this.state);
     fetch('https://conduit.productionready.io/api/users/login', {
       method: 'POST',
@@ -36,6 +41,8 @@ export default class SignIn extends React.Component {
       .then((res) => res.json())
       .then(
         (res) => {
+          //   this.props.sendLoginInfo(res);
+          this.props.history.push('/register');
           console.log(res);
         },
         (err) => {
@@ -88,3 +95,5 @@ export default class SignIn extends React.Component {
     );
   }
 }
+
+export default withRouter(SignIn);
