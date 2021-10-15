@@ -19,7 +19,7 @@ function Counter(props) {
 
 const mapStateToProps = (state) => {
     return {
-        number: state.number
+        number: state.reducerCounter.number
     };
 }
 

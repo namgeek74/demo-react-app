@@ -47,7 +47,7 @@ function Todo(props) {
 }
 
 const mapStateToProps = (state) => {
-    return { todoList: state.todoList };
+    return { todoList: state.reducerTodo.todoList };
 }
 
 export default connect(mapStateToProps)(Todo);
