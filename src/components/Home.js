@@ -1,12 +1,12 @@
 import React from 'react';
+import Counter from './Counter';
+import Todo from './Todo';
 
-export default class Home extends React.Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return <h1>Home page</h1>;
-  }
+export default function Home() {
+  return (
+    <>
+      <Counter />
+      <Todo />
+    </>
+  );
 }
